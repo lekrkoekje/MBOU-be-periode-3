@@ -14,7 +14,7 @@ class SmartphoneController extends BaseController
         /**
          * Haal de resultaten van de model binnen
          */
-        $result = $this->smartphoneModel->getAllSmartphones();
+        $result = $this->smartphoneModel->getAllSmartphones($display='none', $message = '');
 
         // var_dump($result);
 
@@ -23,6 +23,8 @@ class SmartphoneController extends BaseController
          */
         $data = [
             'title'  => 'Overzicht Smartphones',
+            'display' => $display,
+            'message' => $message,
             'result' => $result
         ];
 
@@ -31,4 +33,14 @@ class SmartphoneController extends BaseController
          */
         $this->view('smartphone/index', $data);
     }
+
+        public function delete($id)
+        {
+            $result = $this->smartphoneModel->delete($id);
+
+            header('Refresh:3 ; url=' . URLROOT . '/SmartphoneController/index');
+
+            $this->index('flex', 'Record is verwijderd');
+        }
+
 }

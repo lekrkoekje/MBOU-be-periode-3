@@ -11,7 +11,8 @@ class Smartphone
 
     public function getAllSmartphones()
     {
-        $sql = 'SELECT  SMPS.Merk
+        $sql = 'SELECT   SMPS.Id
+                        ,SMPS.Merk
                         ,SMPS.Model
                         ,SMPS.Prijs
                         ,SMPS.Geheugen
@@ -29,5 +30,17 @@ class Smartphone
         $this->db->query($sql);
 
         return $this->db->resultSet();
+    }
+
+    public function delete($id)
+    {
+        $sql = 'DELETE FROM Smartphones 
+        WHERE Id = :id';
+
+        $this->db->query($sql);
+
+        $this->db->bind(':id', $id, PDO::PARAM_INT);
+
+        return $this->db->execute();
     }
 }
