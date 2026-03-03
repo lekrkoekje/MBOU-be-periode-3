@@ -20,7 +20,7 @@ class SneakerController extends BaseController
          * Het $data-array geeft informatie mee aan de view-pagina
          */
         $data = [
-            'title'  => 'Overzicht Sneakers',
+            'title' => 'Overzicht Sneakers',
             'result' => $result
         ];
 
