@@ -24,28 +24,24 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Merk</th>
-                        <th>Model</th>
-                        <th>Type</th>
-                        <th>Prijs</th>
-                        <th>Materiaal</th>
-                        <th>Gewicht</th>
-                        <th>Releasedatum</th>
+                        <th>Naam</th>
+                        <th>Nationaliteit</th>
+                        <th>Nettowaarde</th>
+                        <th>Geboortedatum</th>
+                        <th>Bekendste Hit</th>
                         <th>Verwijder</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($data['result'] as $sneaker) : ?>
+                    <?php foreach ($data['result'] as $zangeres) : ?>
                         <tr>
-                            <td><?= $sneaker->Merk; ?></td>
-                            <td><?= $sneaker->Model; ?></td>
-                            <td><?= $sneaker->Type; ?></td>
-                            <td><?= $sneaker->Prijs; ?></td>
-                            <td><?= $sneaker->Materiaal; ?></td>
-                            <td><?= $sneaker->Gewicht; ?></td>
-                            <td><?= $sneaker->Releasedatum; ?></td>
+                            <td><?= $zangeres->Naam; ?></td>
+                            <td><?= $zangeres->Nationaliteit; ?></td>
+                            <td><?= $zangeres->Nettowaarde; ?></td>
+                            <td><?= $zangeres->Geboortedatum; ?></td>
+                            <td><?= $zangeres->BekendsteHit; ?></td>
                             <td class="text-center">
-                                <a href="<?= URLROOT; ?>/SneakerController/delete/<?= $sneaker->Id; ?>"
+                                <a href="<?= URLROOT; ?>/ZangeressenController/delete/<?= $zangeres->Id; ?>"
                                     onclick="return confirm('Weet je zeker dat je dit record wilt verwijderen?');">
                                     <i class="bi bi-trash3-fill text-danger"></i>
                                 </a>

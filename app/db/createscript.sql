@@ -142,3 +142,123 @@ VALUES
 
 SELECT * FROM mvc_basics_2509ab.smartphones;
 SELECT * FROM mvc_basics_2509ab.sneakers;
+
+-- Step: 06
+-- ********************************************************************************************
+-- Doel: Maak een nieuwe tabel aan met de naam Horloges
+-- ********************************************************************************************
+-- Versie   Datum       Auteur           Omschrijving
+-- ****     ****        ******           *************
+-- 01       07-03-2026  JoeyU            Tabel Horloges
+-- ********************************************************************************************
+-- Onderstaande velden toevoegen aan de tabel Horloges
+-- Merk, Model, Prijs, Materiaal, Diameter, Beweging, Releasedatum
+-- ********************************************************************************************
+
+CREATE TABLE Horloges
+(
+    Id              SMALLINT        UNSIGNED        NOT NULL    AUTO_INCREMENT,
+    Merk            VARCHAR(50)                     NOT NULL,
+    Model           VARCHAR(50)                     NOT NULL,
+    Prijs           DECIMAL(12,2)                   NOT NULL,
+    Materiaal       VARCHAR(50)                     NOT NULL,
+    Diameter        SMALLINT        UNSIGNED        NOT NULL,
+    Beweging        VARCHAR(50)                     NOT NULL,
+    Releasedatum    DATE                            NOT NULL,
+    IsActief        BIT                             NOT NULL    DEFAULT 1,
+    Opmerking       VARCHAR(255)                    NULL        DEFAULT NULL,
+    DatumAangemaakt DATETIME(6)                     NOT NULL    DEFAULT NOW(6),
+    DatumGewijzigd  DATETIME(6)                     NOT NULL    DEFAULT NOW(6),
+    CONSTRAINT PK_Horloges_Id PRIMARY KEY (Id)
+)
+ENGINE=InnoDB;
+
+
+-- Step: 07
+-- ********************************************************************************************
+-- Doel: Vul de tabel Horloges met gegevens
+-- ********************************************************************************************
+-- Versie   Datum       Auteur           Omschrijving
+-- ****     ****        ******           *************
+-- 01       07-03-2026  JoeyU            Vulling Horloges
+-- ********************************************************************************************
+
+INSERT INTO Horloges
+(
+    Merk,
+    Model,
+    Prijs,
+    Materiaal,
+    Diameter,
+    Beweging,
+    Releasedatum
+)
+VALUES
+('Rolex',           'Daytona',          35000.00,   'Staal',    40, 'Automatisch',  '2023-01-15'),
+('Patek Philippe',  'Nautilus',         95000.00,   'Witgoud',  40, 'Mechanisch',   '2022-06-01'),
+('Audemars Piguet', 'Royal Oak',        75000.00,   'Rosegoud', 41, 'Automatisch',  '2021-04-10'),
+('Richard Mille',   'RM 011',          180000.00,   'Titanium', 50, 'Automatisch',  '2020-09-20'),
+('Omega',           'Speedmaster',       6500.00,   'Staal',    42, 'Mechanisch',   '2022-11-03'),
+('TAG Heuer',       'Carrera',           4200.00,   'Staal',    39, 'Automatisch',  '2023-03-22'),
+('IWC',             'Portugieser',      12000.00,   'Staal',    42, 'Automatisch',  '2021-07-14'),
+('Breitling',       'Navitimer',         7800.00,   'Staal',    46, 'Automatisch',  '2022-02-28');
+
+SELECT * FROM mvc_basics_2509ab.horloges;
+
+-- Step: 08
+-- ********************************************************************************************
+-- Doel: Maak een nieuwe tabel aan met de naam Zangeressen
+-- ********************************************************************************************
+-- Versie   Datum       Auteur           Omschrijving
+-- ****     ****        ******           *************
+-- 01       07-03-2026  JoeyU            Tabel Zangeressen
+-- ********************************************************************************************
+-- Onderstaande velden toevoegen aan de tabel Zangeressen
+-- Naam, Nationaliteit, Nettowaarde, Geboortedatum, BekendsteHit
+-- ********************************************************************************************
+
+CREATE TABLE Zangeressen
+(
+    Id              SMALLINT        UNSIGNED        NOT NULL    AUTO_INCREMENT,
+    Naam            VARCHAR(100)                    NOT NULL,
+    Nationaliteit   VARCHAR(50)                     NOT NULL,
+    Nettowaarde     DECIMAL(15,2)                   NOT NULL,
+    Geboortedatum   DATE                            NOT NULL,
+    BekendsteHit    VARCHAR(100)                    NOT NULL,
+    IsActief        BIT                             NOT NULL    DEFAULT 1,
+    Opmerking       VARCHAR(255)                    NULL        DEFAULT NULL,
+    DatumAangemaakt DATETIME(6)                     NOT NULL    DEFAULT NOW(6),
+    DatumGewijzigd  DATETIME(6)                     NOT NULL    DEFAULT NOW(6),
+    CONSTRAINT PK_Zangeressen_Id PRIMARY KEY (Id)
+)
+ENGINE=InnoDB;
+
+
+-- Step: 09
+-- ********************************************************************************************
+-- Doel: Vul de tabel Zangeressen met gegevens
+-- ********************************************************************************************
+-- Versie   Datum       Auteur           Omschrijving
+-- ****     ****        ******           *************
+-- 01       07-03-2026  JoeyU            Vulling Zangeressen
+-- ********************************************************************************************
+
+INSERT INTO Zangeressen
+(
+    Naam,
+    Nationaliteit,
+    Nettowaarde,
+    Geboortedatum,
+    BekendsteHit
+)
+VALUES
+('Rihanna',         'Barbadaans',   1400.00,    '1988-02-20',   'Umbrella'),
+('Taylor Swift',    'Amerikaans',   1100.00,    '1989-12-13',   'Shake It Off'),
+('Madonna',         'Amerikaans',    850.00,    '1958-08-16',   'Like a Virgin'),
+('Celine Dion',     'Canadees',      800.00,    '1968-03-30',   'My Heart Will Go On'),
+('Beyoncé',         'Amerikaans',    540.00,    '1981-09-04',   'Crazy in Love'),
+('Shakira',         'Colombiaans',   300.00,    '1977-02-02',   'Hips Don\'t Lie'),
+('Lady Gaga',       'Amerikaans',    320.00,    '1986-03-28',   'Bad Romance'),
+('Adele',           'Brits',         220.00,    '1988-05-05',   'Hello');
+
+SELECT * FROM mvc_basics_2509ab.zangeressen;

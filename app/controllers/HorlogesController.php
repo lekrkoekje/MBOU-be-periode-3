@@ -1,12 +1,12 @@
 <?php
 
-class SneakerController extends BaseController
+class HorlogesController extends BaseController
 {
-    private $sneakerModel;
+    private $horlogeModel;
 
     public function __construct()
     {
-        $this->sneakerModel = $this->model('Sneaker');
+        $this->horlogeModel = $this->model('Horloge');
     }
 
     public function index()
@@ -14,13 +14,13 @@ class SneakerController extends BaseController
         /**
          * Haal de resultaten van de model binnen
          */
-        $result = $this->sneakerModel->getAllSneakers($display='none', $message = '');
+        $result = $this->horlogeModel->getAllHorloges($display='none', $message = '');
 
         /**
          * Het $data-array geeft informatie mee aan de view-pagina
          */
         $data = [
-            'title'   => 'Overzicht Sneakers',
+            'title'   => 'Duurste Horloges',
             'display' => $display,
             'message' => $message,
             'result'  => $result
@@ -29,14 +29,14 @@ class SneakerController extends BaseController
         /**
          * Met de view-method uit de BaseController-class wordt de view aangeroepen
          */
-        $this->view('sneaker/index', $data);
+        $this->view('horloges/index', $data);
     }
 
         public function delete($id)
         {
-            $result = $this->sneakerModel->delete($id);
+            $result = $this->horlogeModel->delete($id);
 
-            header('Refresh:3 ; url=' . URLROOT . '/SneakerController/index');
+            header('Refresh:3 ; url=' . URLROOT . '/HorlogesController/index');
 
             $this->index('flex', 'Record is verwijderd');
         }
