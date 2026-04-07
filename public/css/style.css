@@ -44,3 +44,12 @@ footer {
 }
 
 .homepage-links a:hover { text-decoration: underline; }
+
+/* Aangepaste kleuren */
+.navbar {
+    background-color: #ff3131 !important;
+}
+
+footer.bg-dark {
+    background-color: #5672ff !important;
+}
