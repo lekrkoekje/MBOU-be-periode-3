@@ -70,8 +70,8 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <a href="<?= URLROOT; ?>/homepages/index">
-                <i class="bi bi-arrow-left"></i>
+            <a href="<?= URLROOT; ?>/homepages/index" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Terug naar homepage
             </a>
         </div>
     </div>
